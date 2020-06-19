@@ -1,0 +1,37 @@
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    auth:
+      path: /auth/**
+      sensitiveHeaders: 
+      serviceId: auth-service
+    resource:
+      path: /resource/**
+      sensitiveHeaders: 
+      serviceId: resource-service
+    customer:
+      path: /customer/**
+      sensitiveHeaders: 
+      serviceId: customer-service
+    order:
+      path: /order/**
+      sensitiveHeaders:
+      serviceId: customer-service
+    user:
+      path: /user/**
+      sensitiveHeaders:
+      serviceId: user-service
+session:
+      cookie:
+        name: HOOKUP-SESSION
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      clientId: hookup24
+      clientSecret: hookup0258
+      accessTokenUri: http://auth-service/auth/oauth/token
+      userAuthorizationUri: http://resource-service/resource/oauth/check_token
+    resource:
+      userInfoUri: http://user-service/user/me
