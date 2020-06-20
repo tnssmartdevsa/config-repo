@@ -16,7 +16,7 @@ zuul:
     order:
       path: /order/**
       sensitiveHeaders:
-      serviceId: customer-service
+      serviceId: order-service
     user:
       path: /user/**
       sensitiveHeaders:
