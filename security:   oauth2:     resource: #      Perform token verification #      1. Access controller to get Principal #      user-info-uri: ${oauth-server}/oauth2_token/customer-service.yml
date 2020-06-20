@@ -1,0 +1,10 @@
+security:
+  oauth2:
+    resource:
+#      Perform token verification
+#      1. Access controller to get Principal
+#      user-info-uri: ${oauth-server}/oauth2_token/current
+#      prefer-token-info: false
+#      Accessing Authorization Server to Obtain Public Key Resolution Token
+      jwt:
+        key-value: hookup24   
