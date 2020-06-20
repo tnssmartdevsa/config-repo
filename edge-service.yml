@@ -25,13 +25,7 @@ session:
       cookie:
         name: HOOKUP-SESSION
 security:
-  basic:
-    enabled: false
   oauth2:
-    client:
-      clientId: hookup24
-      clientSecret: hookup0258
-      accessTokenUri: http://auth-service/auth/oauth/token
-      userAuthorizationUri: http://resource-service/resource/oauth/check_token
     resource:
-      userInfoUri: http://user-service/user/me
+      jwt:
+        key-value: hookup24
