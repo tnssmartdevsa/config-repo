@@ -1,4 +1,0 @@
-services:
-  client:
-    name:
-      user-service: user-service
