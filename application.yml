@@ -10,3 +10,8 @@ eureka:
     fetch-registry: true
   instance:
     preferIpAddress: true
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: hookup24
