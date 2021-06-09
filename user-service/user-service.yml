@@ -1,6 +1,8 @@
 spring:
+spring.datasource.
   datasource:
-    url: jdbc:postgresql://localhost:5432/user_service?createDatabaseIfNotExist=true;autoReconnect=true
+    schema: shclasspath:/schema.sql
+    url: jdbc:postgresql://localhost:5432/user_service
     username: hookup24
     password: hookup24
     driver-class-name: org.postgresql.Driver
