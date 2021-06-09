@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/stock_service
+    url: jdbc:postgresql://localhost:5432/order_service
     username: hookup24
     password: hookup24
     driver-class-name: org.postgresql.Driver
