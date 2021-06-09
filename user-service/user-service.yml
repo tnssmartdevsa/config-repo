@@ -1,10 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/user_service?createDatabaseIfNotExist=true
+    url: jdbc:postgresql://localhost:5432/user_service?createDatabaseIfNotExist=true;autoReconnect=true
     username: hookup24
     password: hookup24
     driver-class-name: org.postgresql.Driver
   jpa:
+    database-platform:
+      org.hibernate.dialect.PostgreSQL95Dialect
     hibernate:
         ddl-auto: update
     show-sql: true
