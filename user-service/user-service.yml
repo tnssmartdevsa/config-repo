@@ -1,7 +1,6 @@
 spring:
-spring.datasource.
   datasource:
-    schema: shclasspath:/schema.sql
+    schema: classpath:/schema.sql
     url: jdbc:postgresql://localhost:5432/user_service
     username: hookup24
     password: hookup24
