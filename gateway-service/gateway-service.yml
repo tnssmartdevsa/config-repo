@@ -16,5 +16,8 @@ spring:
         - Path=/user-service/**
       - id: orders-service
         uri: http://orders-service
+        filters:
+            - TokenRelay=
+            - RemoveRequestHeader=Cookie
         predicates:
         - Path=/orders-service/**
