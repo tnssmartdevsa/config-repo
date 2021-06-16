@@ -12,7 +12,8 @@ spring:
             - TokenRelay=
             - RemoveRequestHeader=Cookie
         predicates:
-        - Path=/delivery-service/**
+        - Path=/courier-service/**
+        - Header=Authorization, Bearer [0-9a-zA-Z-.]*
       - id: user-service
         uri: http://user-service
         filters:
@@ -20,6 +21,7 @@ spring:
             - RemoveRequestHeader=Cookie
         predicates:
         - Path=/user-service/**
+        - Header=Authorization, Bearer [0-9a-zA-Z-.]*
       - id: orders-service
         uri: http://orders-service
         filters:
@@ -27,3 +29,4 @@ spring:
             - RemoveRequestHeader=Cookie
         predicates:
         - Path=/orders-service/**
+        - Header=Authorization, Bearer [0-9a-zA-Z-.]*
