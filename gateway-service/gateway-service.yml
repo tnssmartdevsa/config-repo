@@ -6,6 +6,7 @@ spring:
         uri: http://auth-service
         predicates:
         - Path=/auth-service/**
+        - Header=Authorization, Basic password
       - id: courier-service
         uri: http://courier-service
         filters:
@@ -13,7 +14,7 @@ spring:
             - RemoveRequestHeader=Cookie
         predicates:
         - Path=/courier-service/**
-        - Header=Authorization, Bearer [0-9a-zA-Z-.]*
+        - Header=Authorization, Basic password
       - id: user-service
         uri: http://user-service
         filters:
@@ -21,7 +22,7 @@ spring:
             - RemoveRequestHeader=Cookie
         predicates:
         - Path=/user-service/**
-        - Header=Authorization, Bearer [0-9a-zA-Z-.]*
+        - Header=Authorization, Basic password
       - id: orders-service
         uri: http://orders-service
         filters:
@@ -29,4 +30,4 @@ spring:
             - RemoveRequestHeader=Cookie
         predicates:
         - Path=/orders-service/**
-        - Header=Authorization, Bearer [0-9a-zA-Z-.]*
+        - Header=Authorization, Basic password
