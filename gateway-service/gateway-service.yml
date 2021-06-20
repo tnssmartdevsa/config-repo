@@ -23,8 +23,8 @@ spring:
         filters:
             - RemoveRequestHeader=Cookie
       - id: orders-service
-        uri: http://orders-service
+        uri: http://order-service
         predicates:
-        - Path=/orders-service/**
+        - Path=/order-service/**
         filters:
             - RemoveRequestHeader=Cookie
