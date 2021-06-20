@@ -2,7 +2,7 @@ spring:
   cloud:
     gateway:
       default-filters:
-        - TokenRelay
+        - TokenRelay=
       routes:
       - id: auth-service
         uri: http://auth-service
