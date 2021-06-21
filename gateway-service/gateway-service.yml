@@ -5,7 +5,7 @@ spring:
       - id: auth-service
         uri: http://auth-service
         predicates:
-        - Path=/auth-service/**
+        - Path=/
       - id: courier-service
         uri: http://courier-service
         predicates:
