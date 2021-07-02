@@ -1,6 +1,18 @@
 spring:
   cloud:
     gateway:
+      default-filters:
+        -name: Retry
+         args:
+           retries: 3
+           methods: GET
+           series: SERVER_ERROR
+           exceptions: java.io.IOException, java.util.concurren
+           backoff: 
+              firstBackoff: 50ms
+              maxBackoff: 500ms
+              factor: 2
+              basedOnPreviousValue: false
       routes:
       - id: auth-service
         uri: http://auth-service
