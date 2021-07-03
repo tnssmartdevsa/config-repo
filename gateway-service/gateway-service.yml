@@ -2,6 +2,7 @@ spring:
   cloud:
     gateway:
       default-filters:
+        - TokenRelay
         -name: Retry
          args:
            retries: 3
@@ -18,19 +19,23 @@ spring:
         uri: http://auth-service
         predicates:
         - Path=/
+          filters:
+            - RemoveRequestHeader=Cookie
       - id: courier-service
         uri: http://courier-service
         predicates:
         - Path=/courier-service/**
-        filters:
-        - TokenRelay
+          filters:
+            - RemoveRequestHeader=Cookie
       - id: user-service
         uri: http://user-service
         predicates:
         - Path=/user-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
       - id: order-service
         uri: http://order-service
         predicates:
         - Path=/order-service/**
-        filters:
-        - TokenRelay
+          filters:
+            - RemoveRequestHeader=Cookie
