@@ -23,7 +23,7 @@ spring:
         predicates:
         - Path=/courier-service/**
         filters:
-        - AuthFilter
+        - TokenRelay
       - id: user-service
         uri: http://user-service
         predicates:
@@ -33,4 +33,4 @@ spring:
         predicates:
         - Path=/order-service/**
         filters:
-        - AuthFilter
+        - TokenRelay
