@@ -2,8 +2,8 @@ spring:
   cloud:
     gateway:
       default-filters:
-        - TokenRelay
-        -name: Retry
+        - TokenRelay=
+        - name: Retry
          args:
            retries: 3
            methods: GET
@@ -37,8 +37,9 @@ spring:
         uri: http://order-service
         predicates:
         - Path=/order-service/**
-          filters:
-            - RemoveRequestHeader=Cookie
+        filters:
+          - TokenRelay=
+          - RemoveRequestHeader=Cookie
 
 security:
   oauth2:
