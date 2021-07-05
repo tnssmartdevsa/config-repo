@@ -39,3 +39,9 @@ spring:
         - Path=/order-service/**
           filters:
             - RemoveRequestHeader=Cookie
+
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: hookup24
