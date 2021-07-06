@@ -25,10 +25,3 @@ spring:
     properties:
         hibernate:
           dialect: org.hibernate.dialect.PostgreSQLDialect
-
-#oauth2
-security:
-  oauth2:
-    resource:
-      jwt:
-        key-value: hookup24
