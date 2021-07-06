@@ -39,12 +39,6 @@ spring:
         uri: http://order-service
         predicates:
         - Path=/order-service/**
-        filters:
-          - TokenRelay=
-          - RemoveRequestHeader=Cookie
-
-security:
-  oauth2:
-    resource:
-      jwt:
-        key-value: hookup24
+        # filters:
+        #   - TokenRelay=
+        #   - RemoveRequestHeader=Cookie
