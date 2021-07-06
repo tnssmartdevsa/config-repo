@@ -11,8 +11,3 @@ spring:
       url: jdbc:postgresql://localhost:5432/user_service
       username: hookup24
       password: hookup24
-security:
-  oauth2:
-    resource:
-      jwt:
-        key-value: hookup24
