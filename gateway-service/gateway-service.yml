@@ -5,9 +5,10 @@ spring:
         - name: Retry
          args:
            retries: 3
-           methods: GET
            series: SERVER_ERROR
-           exceptions: java.io.IOException, java.util.concurrent.TimeoutException
+           statuses: BAD_GATEWAY,SERVICE_UNAVAILABLE,GATEWAY_TIMEOUT
+           methods: GET,POST,PUT
+           exceptions: org.springframework.cloud.gateway.support.NotFoundException,java.io.IOException,org.springframework.cloud.gateway.support.TimeoutException
            backoff: 
               firstBackoff: 50ms
               maxBackoff: 500ms
