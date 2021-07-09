@@ -40,6 +40,13 @@ spring:
         uri: http://order-service
         predicates:
         - Path=/order-service/**
-        # filters:
-        #   - TokenRelay=
-        #   - RemoveRequestHeader=Cookie
+        filters:
+          - TokenRelay=
+          - RemoveRequestHeader=Cookie
+      - id: payment-service
+        uri: http://payment-service
+        predicates:
+        - Path=/payment-service/**
+        filters:
+          - TokenRelay=
+          - RemoveRequestHeader=Cookie
